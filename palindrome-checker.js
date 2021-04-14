@@ -11,7 +11,17 @@
 */
 
 function palindrome(str) {
-  return true
+  // filter punctuation and case
+  str = str
+    .toLowerCase()
+    .match(/[a-z0-9]/g)
+    .join('')
+
+  // reverse string
+  const revStr = str.split('').reverse().join('')
+
+  // evaluate equality
+  return str === revStr
 }
 
 palindrome('eye')
